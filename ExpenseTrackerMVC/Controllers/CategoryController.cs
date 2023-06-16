@@ -45,9 +45,13 @@ namespace ExpenseTrackerMVC.Controllers
         }
 
         // GET: Category/AddOrEdit
-        public IActionResult AddOrEdit()
+        public IActionResult AddOrEdit(int id=0)
         {
-            return View(new Category());
+            if(id == 0)
+                return View(new Category());
+            else
+                return View(_context.Categories.Find(id));
+
         }
 
         // POST: Category/Create
