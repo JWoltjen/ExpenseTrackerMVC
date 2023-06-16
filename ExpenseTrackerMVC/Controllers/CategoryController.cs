@@ -54,7 +54,7 @@ namespace ExpenseTrackerMVC.Controllers
 
         }
 
-        // POST: Category/Create
+        // POST: Category/AddOrEdit
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -63,7 +63,10 @@ namespace ExpenseTrackerMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(category);
+                if (category.CategoryId == 0)
+                    _context.Add(category);
+                else
+                    _context.Update(category);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
