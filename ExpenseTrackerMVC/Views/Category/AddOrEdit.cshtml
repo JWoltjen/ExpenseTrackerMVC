@@ -1,6 +1,8 @@
 ﻿@model ExpenseTrackerMVC.Models.Category
 
 @{
+    ViewData["PageTitle"] = Model.CategoryId == 0 ? "Create a new Category" : "Edit Category";
+
 }
 
 <div class="row">
