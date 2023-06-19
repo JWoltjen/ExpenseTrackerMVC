@@ -1,6 +1,7 @@
 ﻿using ExpenseTrackerMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace ExpenseTrackerMVC.Controllers
 {
@@ -22,8 +23,28 @@ namespace ExpenseTrackerMVC.Controllers
                 .Where(y => y.Date >= StartDate && y.Date<=EndDate)
                 .ToListAsync();
 
+            // Total Income
+            int TotalIncome = SelectedTransactions
+                .Where(i => i.Category.Type == "Income")
+                .Sum(j => j.Amount);
+            ViewBag.TotalIncome = TotalIncome.ToString("C0");
+
+            // Total Expenses
+            int TotalExpenses = SelectedTransactions
+                .Where(i => i.Category.Type == "Expense")
+                .Sum(j => j.Amount);
+            ViewBag.TotalExpenses = TotalExpenses.ToString("C0");
+
+            // Balance
+            int Balance = TotalIncome - TotalExpenses;
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+            culture.NumberFormat.CurrencyNegativePattern = 1;
+            ViewBag.Balance = String.Format(culture, "{0.C0}", Balance);
+
 
             return View();
+
+
         }
     }
 }
