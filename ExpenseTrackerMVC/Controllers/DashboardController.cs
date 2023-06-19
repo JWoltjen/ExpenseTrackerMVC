@@ -53,6 +53,7 @@ namespace ExpenseTrackerMVC.Controllers
                     formattedAmount = k.Sum(j => j.Amount).ToString("C0")
                 })
                 .ToList();
+
             return View();
 
 
