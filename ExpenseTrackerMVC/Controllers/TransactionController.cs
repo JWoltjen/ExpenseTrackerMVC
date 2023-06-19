@@ -27,10 +27,14 @@ namespace ExpenseTrackerMVC.Controllers
 
 
         // GET: Transaction/AddOrEdit 
-        public IActionResult AddOrEdit()
+        public IActionResult AddOrEdit(int id=0)
         {
             PopulateCategories();
+            if(id == 0)
             return View(new Transaction());
+            else
+            return View(_context.Transactions.Find(id));
+
         }
 
         // POST: Transaction/AddOrEdit
