@@ -119,7 +119,12 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
+/*Profile Pic*/
+img.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
 
 /*Radio button group*/
 e-btn-group.custom-rbt-group {
