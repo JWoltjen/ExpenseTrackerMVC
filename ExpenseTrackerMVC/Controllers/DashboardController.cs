@@ -84,11 +84,11 @@ namespace ExpenseTrackerMVC.Controllers
                 .Select(i => StartDate.AddDays(i).ToString("dd-MMM"))
                 .ToArray();
 
-            ViewBag.SpineChartData = from day in Last7Days
+            ViewBag.SplineChartData = from day in Last7Days
                                      join income in IncomeSummary on day equals income.day into dayIncomeJoined
                                      from income in dayIncomeJoined.DefaultIfEmpty()
                                      join expense in ExpenseSummary on day equals expense.day into expenseJoined
-                                     from expense in dayIncomeJoined.DefaultIfEmpty()
+                                     from expense in expenseJoined.DefaultIfEmpty()
                                      select new
                                      {
                                          day = day,
