@@ -47,8 +47,17 @@
 
  <ejs-sidebar id="sidebar" width="290px">
      <e-content-template>
+         <div class="logo-wrapper">
+            <div class="app-logo">
+                <img src="~/logo.png"/>
+            </div>
+        </div>
          <div class="profile-wrapper">
-
+             <img class="profile-pic" src="~/profile.jpg" />
+             <div class="d-flex flex-column ps-3">
+                 <h6 class="mb-0">Wallet App</h6>
+                 <span class="text-muted">Hugo Chaparal</span>
+             </div>
          </div>
          
          <ejs-menu id="menu" 
@@ -57,3 +66,11 @@
      </e-content-template>
 
  </ejs-sidebar>
+ <script>
+     document.addEventListener('DOMContentLoaded', function (){
+         dockBar = document.getElementById('sidebar').ej2_instances[0];
+         document.getElementById('sidebar-toggler').onclick = function () {
+             dockBar.toggle();
+         };
+     });
+ </script>
