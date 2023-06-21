@@ -55,7 +55,7 @@ namespace ExpenseTrackerMVC.Controllers
                 .OrderByDescending(l=>l.amount)
                 .ToList();
 
-            // Splice Chart - Income v. Expense
+            // Spline Chart - Income v. Expense
             // Income
             List<SplineChartData> IncomeSummary = SelectedTransactions
                 .Where(i => i.Category.Type == "Income")
@@ -101,9 +101,8 @@ namespace ExpenseTrackerMVC.Controllers
                 .OrderByDescending(j => j.Date)
                 .Take(5)
                 .ToListAsync();
+
             return View();
-
-
         }
     }
 
