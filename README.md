@@ -1,5 +1,5 @@
 # ExpenseTrackerMVC Tutorial Follow Along
-(http://g.recordit.co/a13zsBbwCf.gif)
+![Expense Tracker Final](http://g.recordit.co/a13zsBbwCf.gif)
 This is a project I built following a tutorial online: https://www.youtube.com/watch?v=zQ5eijfpuu8&ab_channel=CodAffection. The purpose of this readme is to review the concepts covered during the tutorial to solidify the knowledge gained.
 
 ## Overview
@@ -19,12 +19,6 @@ The project used Entity Framework Core for database design. It had two entities,
 ### Dashboard View
 
 ### Sidebar View
-
-Objectives
-
-From the saved posters view, if a user double clicks a saved poster, it will be deleted.
-
-![alt image: functionality of Iteration 4](http://g.recordit.co/NWO5fqkKuS.gif)
 
 
 ## Key Concepts and Challenges
