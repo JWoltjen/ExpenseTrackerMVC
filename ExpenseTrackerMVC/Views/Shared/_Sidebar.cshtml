@@ -45,12 +45,15 @@
     });
 }
 
- <ejs-sidebar id="sidebar" width="290px">
+ <<ejs-sidebar id="sidebar" width="290px" enableDock dockSize="100px"
+               target=".dock-target" enableGestures="false">
      <e-content-template>
          <div class="logo-wrapper">
             <div class="app-logo">
                 <img src="~/logo.png"/>
             </div>
+            <div class="w-100"></div>
+            <i id="sidebar-toggler" class="fa-solid"></i>
         </div>
          <div class="profile-wrapper">
              <img class="profile-pic" src="~/profile.jpg" />
@@ -61,8 +64,9 @@
          </div>
          
          <ejs-menu id="menu" 
-            items="menuItems" 
-            orientation="Vertical"></ejs-menu>
+                   items="menuItems" 
+                   orientation="Vertical"
+                   hamburgerMode></ejs-menu>
      </e-content-template>
 
  </ejs-sidebar>
