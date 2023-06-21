@@ -1,5 +1,5 @@
 # ExpenseTrackerMVC Tutorial Follow Along
-![Expense Tracker Final](http://g.recordit.co/a13zsBbwCf.gif)
+![Expense Tracker Final](http://g.recordit.co/mmdy8VWTMd.gif)
 This is a project I built following a tutorial online: https://www.youtube.com/watch?v=zQ5eijfpuu8&ab_channel=CodAffection. The purpose of this readme is to review the concepts covered during the tutorial to solidify the knowledge gained.
 
 ## Overview
@@ -38,9 +38,11 @@ The project used Entity Framework Core for database design. It had two entities,
 
 ### Category and Transaction Views
 
-
+Category and Transaction each had two views, index and AddOrEdit. Index was designed to display a list of categories/transactions using the SyncFusion component, ejs-grid and its various elements.The AddOrEdit view combines Post and Put methods into a single Post method from the controller. If the CategoryId or TransactionId == 0, the view will understand that we are adding something entirely new, else, it will understand that we are editing an existing Category or Transaction. The POST method is used for both actions because we are dealing with forms.
 
 ### Dashboard View
+
+The Dashboard has one view, which is index. It makes use of two SyncFusion components, Spline Chart and Doughnut Chart. These components are highly configurable and so the Dashboard Controller takes advantage of the ViewBag to pass these custom components pieces of information without having to rely on strong-typed models. The Dashboard Controller creates several calculations, such as total income, total expenses, and balance, which it puts into the ViewBag to be displayed by the view at the appropriate area. The design of th Dashboard is broken down into several widgets, which are arranged with css bootstrap classes.
 
 ### Sidebar View
 
