@@ -8,6 +8,30 @@ This is an expense tracking applciation that is built with the .NET MVC design p
 
 ## Progression
 
+### MVC Design Pattern
+
+In the Model-View-Controller (MVC) architectural pattern, the responsibility of deciding what to display in a view lies primarily with the controller. The controller's role is to receive requests from the user, handle the business logic, and determine the appropriate data to pass to the view.
+
+Here's a general overview of how MVC decides what to display in a view:
+
+1. User interaction: The user initiates an action, such as submitting a form or clicking a link, which triggers a request to the controller.
+
+2. Routing: The request is directed to a specific controller action based on the configured routes in the application. The action method is responsible for processing the request.
+
+3. Data retrieval: The controller action retrieves the necessary data from the model or other data sources. This may involve querying a database, calling external APIs, or performing any other necessary data operations.
+
+4. Data preparation: The controller action prepares the data by creating an instance of the appropriate view model or by populating dynamic properties on the ViewBag or ViewData objects. The view model is an object specifically designed to hold the data required by the view.
+
+5. View selection: The controller action determines which view should be rendered based on the requested action and the corresponding view template. The view template is typically an HTML file containing the necessary placeholders and logic for rendering the data.
+
+6. Data passing: The controller action passes the prepared data (view model or dynamic properties) to the selected view template.
+
+7. Rendering: The view template receives the data and uses the appropriate HTML markup, Razor syntax (in ASP.NET MVC), or other view templating languages to display the data dynamically. The view may utilize loops, conditionals, and other logic to iterate through collections or conditionally render specific elements.
+
+8. Response: The rendered view is returned as the response to the user's request.
+
+By following this pattern, MVC separates the concerns of data retrieval, business logic, and rendering, allowing for modular and maintainable code. The controller acts as an intermediary, coordinating the interaction between the model (data), the view (presentation), and the user.
+
 ### Database Design and Models
 
 The project used Entity Framework Core for database design. It had two entities, Category and Transaction. On of the things that I did not know about before this project was that I could use the "Not Mapped" attribute in a model class to combine two pieces of that model's  state in a more useful way. This project wanted to display the user-selected emoji icon next to the category name, and so creating a "Not Mapped" property, "public string? CategoryTitleWithIcon" made sense. The Transaction model also made use of navigation fields for Category, so that it would be easier to fetch a given Transactions associated category, hence the relational part of a relational database.
