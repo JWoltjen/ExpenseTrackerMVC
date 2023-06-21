@@ -1,5 +1,5 @@
 # ExpenseTrackerMVC Tutorial Follow Along
-
+(http://g.recordit.co/a13zsBbwCf.gif)
 This is a project I built following a tutorial online: https://www.youtube.com/watch?v=zQ5eijfpuu8&ab_channel=CodAffection. The purpose of this readme is to review the concepts covered during the tutorial to solidify the knowledge gained.
 
 ## Overview
@@ -13,6 +13,7 @@ This is an expense tracking applciation that is built with the .NET MVC design p
 The project used Entity Framework Core for database design. It had two entities, Category and Transaction. On of the things that I did not know about before this project was that I could use the "Not Mapped" attribute in a model class to combine two pieces of that model's  state in a more useful way. This project wanted to display the user-selected emoji icon next to the category name, and so creating a "Not Mapped" property, "public string? CategoryTitleWithIcon" made sense. The Transaction model also made use of navigation fields for Category, so that it would be easier to fetch a given Transactions associated category, hence the relational part of a relational database.
 
 ### Category and Transaction Views
+
 
 
 ### Dashboard View
